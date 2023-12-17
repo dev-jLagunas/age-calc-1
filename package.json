@@ -1,0 +1,14 @@
+{
+  "name": "age-calculator",
+  "version": "1.0.0",
+  "description": "Simple age calculator. Frontend mentor challenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Juan Lagunas",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
