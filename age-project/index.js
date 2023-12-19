@@ -1,20 +1,20 @@
 //Input Fields
-let dayInput = document.getElementById("day");
-let monthInput = document.getElementById("month");
-let yearInput = document.getElementById("year");
+const dayInput = document.getElementById("day");
+const monthInput = document.getElementById("month");
+const yearInput = document.getElementById("year");
 
 //Input Labels
-let dayLabel = document.querySelector('label[for="day"]');
-let monthLabel = document.querySelector('label[for="month"]');
-let yearLabel = document.querySelector('label[for="year"]');
+const dayLabel = document.querySelector('label[for="day"]');
+const monthLabel = document.querySelector('label[for="month"]');
+const yearLabel = document.querySelector('label[for="year"]');
 
 //Date Spans
-var yearsSpan = document.querySelector(".text-wrapper h3:nth-child(1) span");
-var monthsSpan = document.querySelector(".text-wrapper h3:nth-child(2) span");
-var daysSpan = document.querySelector(".text-wrapper h3:nth-child(3) span");
+const yearsSpan = document.querySelector(".text-wrapper h3:nth-child(1) span");
+const monthsSpan = document.querySelector(".text-wrapper h3:nth-child(2) span");
+const daysSpan = document.querySelector(".text-wrapper h3:nth-child(3) span");
 
 //button
-var calculateButton = document.querySelector(".btn");
+const calculateButton = document.querySelector(".btn");
 
 //Event Listener
 calculateButton.addEventListener("click", function () {
