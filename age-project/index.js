@@ -114,19 +114,15 @@ function calculateAge() {
   let birthdate = new Date(year, month - 1, day);
   let currentDate = new Date();
 
-  // Calculate the difference in years
+  // Calculate the difference
   let years = currentDate.getFullYear() - birthdate.getFullYear();
-
-  // Calculate the difference in months
   let months = currentDate.getMonth() - birthdate.getMonth();
-
-  // Calculate the difference in days
   let days = currentDate.getDate() - birthdate.getDate();
 
   // If the day is negative, decrease months by one and add the number of days in the previous month
   if (days < 0) {
     months--;
-    var previousMonth = new Date(
+    let previousMonth = new Date(
       currentDate.getFullYear(),
       currentDate.getMonth(),
       0
@@ -134,19 +130,10 @@ function calculateAge() {
     days += previousMonth.getDate();
   }
 
-  // If the month is negative, decrease years by one and add 12 to the months
-  if (months < 0) {
+  // If the month is negative or it's the birth month but the current day is before the birth day, decrease years by one
+  if (months < 0 || (months === 0 && days < 0)) {
     years--;
-    months += 12;
-  }
-
-  // If the current month and day are less than the birth month and day, subtract one year
-  if (
-    currentDate.getMonth() < birthdate.getMonth() ||
-    (currentDate.getMonth() == birthdate.getMonth() &&
-      currentDate.getDate() < birthdate.getDate())
-  ) {
-    years--;
+    months = (months + 12) % 12;
   }
 
   // Display the result
