@@ -98,6 +98,7 @@ function validateInputs() {
 
 function displayErrorMessage(input, message) {
   let errorMessage = document.createElement("p");
+  input.parentNode.insertBefore(errorMessage, input.nextSibling);
   errorMessage.textContent = message;
   errorMessage.style.color = "red";
   errorMessage.className = "error-message";
@@ -114,13 +115,13 @@ function calculateAge() {
   let currentDate = new Date();
 
   // Calculate the difference in years
-  var years = currentDate.getFullYear() - birthdate.getFullYear();
+  let years = currentDate.getFullYear() - birthdate.getFullYear();
 
   // Calculate the difference in months
-  var months = currentDate.getMonth() - birthdate.getMonth();
+  let months = currentDate.getMonth() - birthdate.getMonth();
 
   // Calculate the difference in days
-  var days = currentDate.getDate() - birthdate.getDate();
+  let days = currentDate.getDate() - birthdate.getDate();
 
   // If the day is negative, decrease months by one and add the number of days in the previous month
   if (days < 0) {
